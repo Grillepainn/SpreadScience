@@ -1,0 +1,13 @@
+<div class="blog-post bg-light rounded" *ngIf="(Blogpost$ | async) as bp; else loading">
+  <h2 class="blog-post-title">{{bp.title}}</h2>
+  <p class="blog-post-meta">{{bp.createdOn | date:'fullDate'}}</p>
+  <p [innerHTML]="bp.content" class="text-justify"></p>
+</div>
+
+
+<ng-template #loading>
+  <p>Chargement de l'article...</p>
+</ng-template>
+
+
+

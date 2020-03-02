@@ -1,0 +1,27 @@
+<mat-card id="create_blogpost">
+  <h2>Création d'un article</h2>
+  <form [formGroup]="creationForm" (submit)="createBlogPost(formDirective)" #formDirective="ngForm">
+      <div class="example-container">
+          <mat-form-field>
+            <input matInput placeholder="Titre" required formControlName="title">
+          </mat-form-field>
+          <br>
+          <mat-form-field>
+              <mat-label>Catégories</mat-label>
+              <select matNativeControl required formControlName="categorie">
+                <option value="Astro">Astronomie et Astrophysique</option>
+                <option value="BiologieA">Biologie Animale</option>
+                <option value="BiologieV">Biologie Végétale</option>
+              </select>
+            </mat-form-field>
+          <br>
+          <mat-form-field>
+              <input matInput placeholder="Url de l'image en avant" required formControlName="image">
+            </mat-form-field>
+          <br>
+          <app-ngx-editor placeholder="'Contenu'" [spellcheck]="true" name="content" formControlName="content"></app-ngx-editor>
+        </div>
+        <br>
+        <button mat-button type="submit">Créer l'article</button>
+  </form>
+</mat-card>

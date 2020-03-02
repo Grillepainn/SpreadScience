@@ -1,0 +1,23 @@
+<mat-card>
+  <button mat-button (click)="logout()">Se déconnecter</button>
+</mat-card>
+<br>
+
+<mat-card>
+<h2>Suppression d'un ou plusieurs article(s) sur le site</h2>
+<h5>En cliquant uniquement sur le titre d'un article, vous serez redirigé vers la page d'édition permettant de modifier son contenu</h5>
+
+<mat-selection-list #blogposts>
+    <mat-list-option *ngFor="let bp of allBlogPosts" [value]="bp._id">
+        <a [routerLink]="['/admin/blog-posts/', bp._id]">{{bp.title}}</a>
+    </mat-list-option>
+  </mat-selection-list>
+  <hr>
+      <button mat-button (click)="deleteBlogPosts(blogposts.selectedOptions.selected)">Supprimer le ou les article(s)</button>
+  </mat-card>
+
+  <br>
+
+  <app-blogpost-create></app-blogpost-create>
+
+

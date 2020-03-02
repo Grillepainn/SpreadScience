@@ -1,0 +1,30 @@
+<mat-card *ngIf="blogpost as bp; else loading">
+  <form [formGroup]="editForm" #formDirective="ngForm" (submit)="updateBlogPost(formDirective)">
+    <mat-form-field>
+      <input matInput placeholder="Titre" formControlName="titre" [value]="bp.title">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <mat-label>Catégories</mat-label>
+        <select matNativeControl formControlName="categorie" [value]="bp.categorie">
+          <option value="Astro">Astronomie et Astrophysique</option>
+          <option value="BiologieA">Biologie Animale</option>
+          <option value="BiologieV">Biologie Végétale</option>
+        </select>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input matInput placeholder="Url de l'image en avant" formControlName="image" [value]="bp.image">
+    </mat-form-field>
+    <br>
+    <app-ngx-editor placeholder="'Contenu'" [spellcheck]="true" [(ngModel)]="bp.content" name="content" formControlName="content">
+
+    </app-ngx-editor>
+    <br>
+    <button mat-button type="submit">Modifier le blog post</button>
+  </form>
+</mat-card>
+
+<ng-template #loading>
+  Loading ...
+</ng-template>

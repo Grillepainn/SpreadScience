@@ -1,0 +1,50 @@
+<div class="jumbotron p-4 p-md-5 text-white rounded bg-dark" id="jumbo">
+  <div class="col-md-8 px-0">
+    <h1 class="display-4 font-italic">Bienvenue sur SpreadScience</h1>
+    <p class="text-justify">SPA réalisé grâce au MEAN stack (MongoDB, ExpressJS, Angular et NodeJS) ainsi que bootstrap et materialize.</p>
+    <p class="text-justify"><strong>Fonctions disponibles :</strong> Consultation d'articles via le fil d'actualité ou par catégorie, création et suppression d'article ainsi qu'édition d'article déjà existant. Accès à un panneau d'administration géré grâce à passport.</p>
+  </div>
+</div>
+
+<div class="container category">
+  <div class="row d-flex justify-content-between" id="container_cat">
+      <div class="col-md-4 d-flex align-items-center text-center text-uppercase text-white" id="astronomie">
+        <h3><a [routerLink]="['/blog-posts/cat/Astro']">Astronomie et Astrophysique</a></h3>
+      </div>
+      <div class="col-md-3 d-flex align-items-center text-center text-uppercase text-white" id="animal">
+        <h3><a [routerLink]="['/blog-posts/cat/BiologieA']">Biologie Animale</a></h3>
+      </div>
+      <div class="col-md-4 d-flex align-items-center text-center text-uppercase text-white" id="vegetal">
+        <h3><a [routerLink]="['/blog-posts/cat/BiologieV']">Biologie végétale</a></h3>
+      </div>
+  </div>
+</div>
+
+
+<main role="main" class="container">
+    <div class="row">
+      <div class="col-md-8 blog-main">
+        <router-outlet></router-outlet>
+
+      </div><!-- /.blog-main -->
+
+      <aside class="col-md-4 blog-sidebar">
+        <div class="p-4 mb-3 bg-light rounded" id="try">
+          <h4 class="font-italic">À propos</h4>
+          <p class="mb-0">SpreadScience est une SPA (Single Page Application) réalisé grâce au MEAN stack (MongoDB, Expressjs, Angular 8 et Node.js) pour présenter les différentes compétences acquises après mes différentes formations.</p><br>
+          <p>Tout l'intérêt de cette appli est de montrer ce que j'ai appris concernant les différentes technos pour la réaliser. <strong>Le but n'est pas de vouloir le meilleur rendu, mais uniquement de présenter mes compétences.</strong></p>
+          <p>Dans la prochaine version de l'application, je compte ajouter un système de commentaire et autoriser l'inscription à tout le monde.</p>
+        </div>
+
+        <div class="p-4">
+          <h4 class="font-italic">Liens utiles</h4>
+          <ol class="list-unstyled">
+            <li><a href="https://www.lucasguera.com">Site portfolio</a></li>
+            <li><a href="https://www.linkedin.com/in/luca-sguera-40a12b151/">Linkedin</a></li>
+          </ol>
+        </div>
+      </aside><!-- /.blog-sidebar -->
+
+    </div><!-- /.row -->
+
+  </main><!-- /.container -->

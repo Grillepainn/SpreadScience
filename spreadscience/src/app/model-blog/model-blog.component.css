@@ -1,0 +1,43 @@
+#jumbo{
+  background-image: url('../img/nightsky.jpg');
+}
+
+#astronomie{
+  background-image: url('../img/hubble.jpg');
+  height: 200px;
+  outline: 2px dotted #fff;
+  outline-offset: -15px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+#animal{
+  background-image: url('../img/untitled-2.jpg');
+  height: 200px;
+  outline: 2px dotted #fff;
+  outline-offset: -15px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+#vegetal{
+  background-image: url('../img/foret-pixabay.jpg');
+  outline: 2px dotted #fff;
+  outline-offset: -15px;
+  width: 100%;
+  margin-bottom: 15px;
+  height: 200px;
+}
+
+h3 a{
+  text-decoration: none;
+  color: white;
+}
+
+.category {
+  margin-bottom: 25px
+}
+
+
+
+
