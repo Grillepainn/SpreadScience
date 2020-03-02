@@ -9,7 +9,10 @@ const path = require('path');
 const mongoose = require('mongoose');
 const connection = mongoose.connection;
 
-app.set('port', (process.env.port || 8080));
+//app.set('port', (process.env.port || 8080));
+app.listen(process.env.PORT || 3000, function(){
+    console.log('Express server listening on port %d in %s mode', this.address().port, app.settings.env);
+  });
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
